@@ -1,0 +1,183 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+  margin: 0;
+  padding: 0;
+}
+
+#quiz-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-top: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#timer {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#question {
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#choices li {
+  list-style: none;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#choices li:hover {
+  background-color: green;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#choices li.selected {
+  background-color: purple;
+  color: #fff;
+  position: relative;
+  padding-right: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#choices li.selected::before {
+  content: "\2713";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+#submit {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#result {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#score-container {
+  display: none;
+  text-align: center;
+  margin-top: 40px;
+}
+
+#score-container h2 {
+  margin-bottom: 20px;
+}
+
+#final-score {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+#save {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#score-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#score-list li {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Smooth Wave Background */
+body:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: linear-gradient(
+    90deg,
+    rgba(0, 225, 255, 0.1) 0%,
+    rgba(72, 0, 255, 0.05) 50%,
+    rgba(255, 238, 0, 0.1) 100%
+  );
+  z-index: -1;
+  opacity: 0.5;
+  animation: wave 10s infinite linear;
+}
+
+@keyframes wave {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}

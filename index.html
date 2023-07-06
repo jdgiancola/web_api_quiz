@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web API Quiz</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Web API Quiz</h1>
+      <div id="timer">Time: <span id="time-left"></span></div>
+      <div id="question-container">
+        <div id="question"></div>
+        <ul id="choices"></ul>
+      </div>
+      <div id="result"></div>
+      <div id="submit-container">
+        <button id="submit">Submit</button>
+      </div>
+      <div id="score-container">
+        <input type="text" id="initials" placeholder="Enter your initials" />
+        <button id="save">Save</button>
+        <button id="clear-scores">Clear High Scores</button>
+      </div>
+      <div id="high-scores">
+        <h2>High Scores</h2>
+        <ul id="score-list"></ul>
+      </div>
+    </div>
+
+    <script src="./js/scrpit.js"></script>
+  </body>
+</html>
