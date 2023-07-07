@@ -146,8 +146,15 @@ function checkAnswer(selectedIndex) {
     score++;
     resultElement.textContent = "Correct!";
   } else {
-    timeLeft -= 10; // Subtract 10 seconds for incorrect answer
+    timeLeft -= 30; // Deduct 30 seconds for an incorrect answer
     resultElement.textContent = "Incorrect!";
+    const timeDeduction = document.createElement("span");
+    timeDeduction.textContent = " -30 seconds!";
+    timeDeduction.classList.add("time-deduction");
+    resultElement.appendChild(timeDeduction);
+    setTimeout(function () {
+      resultElement.removeChild(timeDeduction);
+    }, 1000);
   }
 
   currentQuestionIndex++;
@@ -229,6 +236,6 @@ clearScoresButton.addEventListener("click", clearScores);
 
 // Function to clear high scores
 function clearScores() {
-  localStorage.removeItem("highScores");
-  scoreList.innerHTML = ""; // Clear score list from the DOM
+  localStorage.removeItem("scores");
+  scoreListElement.innerHTML = ""; // Clear score list from the DOM
 }

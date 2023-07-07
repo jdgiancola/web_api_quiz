@@ -1,3 +1,4 @@
+/* Sets the overall styling for the body */
 body {
   font-family: Arial, sans-serif;
   background-color: #f1f1f1;
@@ -5,6 +6,7 @@ body {
   padding: 0;
 }
 
+/* Styles for the quiz container */
 #quiz-container {
   max-width: 800px;
   margin: 0 auto;
@@ -15,27 +17,98 @@ body {
   animation: glow 1.5s infinite alternate;
 }
 
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  100% {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  }
+/* Styles for the container */
+.container {
+  height: 200px;
+  position: relative;
 }
 
+/* Styles for the heading */
 h1 {
   text-align: center;
-  color: #333;
+  font-size: 72px; /* Three times as big */
+  color: transparent; /* Make the text transparent */
+  -webkit-text-fill-color: transparent; /* Safari support for color transition */
+  -webkit-text-stroke: 2px #000; /* Black outline */
   margin-top: 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: pulse-color 10s infinite, pulse-size 2s infinite;
 }
 
+@keyframes pulse-color {
+  0%,
+  100% {
+    --color1: #f00; /* Red */
+    --color2: #f90; /* Orange */
+    --color3: #ff0; /* Yellow */
+    --color4: #0f0; /* Green */
+    --color5: #00f; /* Blue */
+    --color6: #90f; /* Indigo */
+    --color7: #f0f; /* Violet */
+  }
+  25% {
+    --color1: #f90; /* Orange */
+    --color2: #ff0; /* Yellow */
+    --color3: #0f0; /* Green */
+    --color4: #00f; /* Blue */
+    --color5: #90f; /* Indigo */
+    --color6: #f0f; /* Violet */
+    --color7: #f00; /* Red */
+  }
+  50% {
+    --color1: #ff0; /* Yellow */
+    --color2: #0f0; /* Green */
+    --color3: #00f; /* Blue */
+    --color4: #90f; /* Indigo */
+    --color5: #f0f; /* Violet */
+    --color6: #f00; /* Red */
+    --color7: #f90; /* Orange */
+  }
+  75% {
+    --color1: #0f0; /* Green */
+    --color2: #00f; /* Blue */
+    --color3: #90f; /* Indigo */
+    --color4: #f0f; /* Violet */
+    --color5: #f00; /* Red */
+    --color6: #f90; /* Orange */
+    --color7: #ff0; /* Yellow */
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    background: linear-gradient(
+      to right,
+      var(--color1),
+      var(--color2),
+      var(--color3),
+      var(--color4),
+      var(--color5),
+      var(--color6),
+      var(--color7)
+    );
+    -webkit-background-clip: text; /* Apply gradient to text */
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@keyframes pulse-size {
+  0%,
+  100% {
+    font-size: 72px; /* Starting size */
+  }
+  50% {
+    font-size: 84px; /* Maximum size */
+  }
+}
+
+/* Styles for secondary headings */
 h2 {
   color: #333;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* Styles for the timer */
 #timer {
   text-align: center;
   font-size: 1.2rem;
@@ -44,11 +117,13 @@ h2 {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* Styles for the question */
 #question {
   margin-bottom: 20px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* Styles for the choices */
 #choices li {
   list-style: none;
   margin-bottom: 10px;
@@ -60,12 +135,14 @@ h2 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Styles for the selected choice */
 #choices li:hover {
   background-color: green;
   color: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Styles for the selected choice */
 #choices li.selected {
   background-color: purple;
   color: #fff;
@@ -74,6 +151,7 @@ h2 {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Styles for the selected choice */
 #choices li.selected::before {
   content: "\2713";
   position: absolute;
@@ -82,6 +160,7 @@ h2 {
   transform: translateY(-50%);
 }
 
+/* Styles for the submit button */
 #submit {
   display: block;
   margin: 20px auto;
@@ -95,6 +174,7 @@ h2 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Styles for the result */
 #result {
   text-align: center;
   margin-bottom: 20px;
@@ -102,21 +182,25 @@ h2 {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* Styles for the score container */
 #score-container {
   display: none;
   text-align: center;
   margin-top: 40px;
 }
 
+/* Styles for the secondary heading in score container */
 #score-container h2 {
   margin-bottom: 20px;
 }
 
+/* Styles for the final score */
 #final-score {
   margin-bottom: 20px;
   font-weight: bold;
 }
 
+/* Styles for the labels */
 label {
   display: block;
   margin-bottom: 10px;
@@ -124,6 +208,7 @@ label {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* Styles for the text input */
 input[type="text"] {
   padding: 10px;
   border: 1px solid #ccc;
@@ -132,6 +217,7 @@ input[type="text"] {
   margin-bottom: 20px;
 }
 
+/* Styles for the save button */
 #save {
   padding: 10px 20px;
   background-color: #4caf50;
@@ -142,18 +228,21 @@ input[type="text"] {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Styles for the score list */
 #score-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 
+/* Styles for the items in score list */
 #score-list li {
   margin-bottom: 10px;
   font-weight: bold;
 }
 
-/* Smooth Wave Background */
+/* Styles for the smooth wave background */
 body:before {
   content: "";
   position: fixed;
@@ -173,6 +262,7 @@ body:before {
   animation: wave 10s infinite linear;
 }
 
+/* Animation for the smooth wave background */
 @keyframes wave {
   0% {
     background-position: 0 0;
@@ -180,4 +270,15 @@ body:before {
   100% {
     background-position: 100% 0;
   }
+}
+
+/* Styles for the clear high scores button */
+#clear-scores {
+  padding: 10px 20px;
+  background-color: #f44336; /* Red */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
